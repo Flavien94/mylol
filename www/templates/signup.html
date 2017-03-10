@@ -1,0 +1,23 @@
+<ion-view view-title="Inscription">
+  <ion-content>
+    <div class="phonecontainer" ng-if="!token">
+      <form>
+        <div class="list">
+          <label class="item item-input">
+            <input ng-model="data.username" type="text" placeholder="Username">
+          </label>
+          <label class="item item-input">
+            <input ng-model="data.password" type="password" placeholder="Password">
+          </label>
+          <label class="item item-input">
+            <input ng-model="data.confirmPassword" type="password" placeholder="Confirm Password">
+          </label>
+        </div>
+        <div class="padding">
+          <input class="button button-block button-positive activated" type="button" value="Sign Up" ng-click="SignUp(data)">
+          <div ng-if="error" class="button button-block button-balanced error">{{error}}</div>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

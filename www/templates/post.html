@@ -1,0 +1,29 @@
+<ion-view view-title="Utilisateur">
+<ion-content>
+<div class="phonecontainer" ng-if="token">
+  <form>
+    <div class="list">
+      <h3 style="text-align:center;border-bottom:1px solid #ddd;padding:15px">Bonjour {{username}}</h3>
+      <label class="item item-input">
+        <input ng-model="data.post" type="text" name="name" placeholder="Ecrivez quelque chose..">
+      </label>
+      <input class="button button-block button-positive activated" type="button" ng-click="PostIt(data)" value="Poster">
+    </div>
+  </form>
+  <ul>
+     <li ng-repeat="post in posts | orderBy:'-id' ">
+  <div class="card">
+    <div class="item">
+      <h2>{{ post.author }}</h2>
+      <p>{{ post.date | limitTo : 20 }}</p>
+    </div>
+    <div class="item item-body" style="margin:0px;">
+      <p style="margin:0px;">{{ post.post }}</p>
+    </div>
+  </div>
+  {{ post.post }} {{ post.author }}
+</li>
+</ul>
+</div>
+</ion-content>
+</ion-view>

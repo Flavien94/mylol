@@ -1,0 +1,13 @@
+.phonecontainer {
+    height: 100vh;
+    color: white;
+}
+form{
+  margin: 0 auto;
+}
+.item{
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.hide{display:hide}

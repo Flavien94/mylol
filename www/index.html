@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>APP</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="cordova.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/login.js"></script>
+  <script src="js/controllers/post.js"></script>
+</head>
+<body ng-app="starter">
+
+  <div ng-controller="MainCtrl">
+    <ion-nav-bar class="bar-stable"></ion-nav-bar>
+    <ion-nav-view class="padding">
+    </ion-nav-view>
+    <div class="tabs">
+      <a ng-if="!token" ui-sref="home" class="tab-item">Home</a>
+      <a ui-sref="post" class="tab-item">Post</a>
+      <a ng-if="token" ng-click="Logout()" class="tab-item">Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>
