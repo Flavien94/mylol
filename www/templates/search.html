@@ -1,32 +1,54 @@
 <ion-view view-title="Search">
   <ion-content>
-<div class="phonecontainer">
-  <form>
-    <div class="list">
-      <label class="item item-input">
-        <input ng-model="name" type="text" name="name" placeholder="Summoner Name">
-      </label>
+    <div class="phonecontainer">
+      <form>
+        <div class="list">
+          <label class="item item-input">
+            <input ng-model="name" type="text" name="name" placeholder="Summoner Name">
+          </label>
+        </div>
+        <div class="padding" style="text-align:center">
+          <input class="button button-block button-positive activated" type="button" value="Search" ng-click="Search(name)">
+          <a ui-sref="signup">Je n'ai pas de compte</a>
+          <ul>
+            <li ng-repeat="i in infos">
+              <div class="card">
+                <div class="item item-avatar">
+                  <img src="https://avatar.leagueoflegends.com/euw/{{i.icon}}.png">
+                  <h2>{{ i.name }}</h2>
+                  <p>id : {{ i.id }}</p>
+                  <p>Niveau : {{ i.lvl }}</p>
+                </div>
+                <div class="item item-body" style="margin:0px;">
+                  <div ng-repeat="s in stats">
+                    <div class="row">
+                    <div class="col">Total Tués :</div>
+                    <div class="col">{{s.totalKill}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Total Morts :</div>
+                    <div class="col">{{s.totalDeaths}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Total Assist :</div>
+                    <div class="col">{{s.totalAssist}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Plus de Tués :</div>
+                    <div class="col">{{s.MostKill}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Plus de Morts :</div>
+                    <div class="col">{{s.MostDeaths}}</div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div ng-if="error" class="button button-block button-balanced error">{{error}}</div>
+        </div>
+      </form>
     </div>
-    <div class="padding" style="text-align:center">
-      <input class="button button-block button-positive activated" type="button" value="Search" ng-click="Search(name)">
-      <a ui-sref="signup" >Je n'ai pas de compte</a>
-      <ul>
-        <li ng-repeat="a in infos">
-          <div class="card">
-            <div class="item item-avatar">
-              <img src="https://avatar.leagueoflegends.com/euw/{{a.icon}}.png">
-              <h2>{{ a.name }}</h2>
-              <p>Niveau : {{ a.lvl }}</p>
-            </div>
-            <div class="item item-body" style="margin:0px;">
-              <p style="margin:0px;">{{ a.id }}</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div ng-if="error" class="button button-block button-balanced error">{{error}}</div>
-    </div>
-  </form>
-</div>
-</ion-content>
+  </ion-content>
 </ion-view>

@@ -20,19 +20,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: '/templates/search.html',
+      templateUrl: './templates/search.html',
       controller: 'SearchCtrl'
-    })
-    .state('signup', {
-      url: '/signup',
-      templateUrl: '/templates/signup.html',
-      controller: 'LoginCtrl'
-    })
-    .state('post', {
-      url: '/post',
-      templateUrl: '/templates/post.html',
-      controller: 'PostCtrl'
     });
+    // .state('signup', {
+    //   url: '/signup',
+    //   templateUrl: './templates/signup.html',
+    //   controller: 'LoginCtrl'
+    // })
+    // .state('post', {
+    //   url: '/post',
+    //   templateUrl: './templates/post.html',
+    //   controller: 'PostCtrl'
+    // });
 
   $urlRouterProvider.otherwise('/');
 });
