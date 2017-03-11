@@ -10,6 +10,20 @@
     <div class="padding" style="text-align:center">
       <input class="button button-block button-positive activated" type="button" value="Search" ng-click="Search(name)">
       <a ui-sref="signup" >Je n'ai pas de compte</a>
+      <ul>
+        <li ng-repeat="a in infos">
+          <div class="card">
+            <div class="item item-avatar">
+              <img src="https://avatar.leagueoflegends.com/euw/{{a.icon}}.png">
+              <h2>{{ a.name }}</h2>
+              <p>Niveau : {{ a.lvl }}</p>
+            </div>
+            <div class="item item-body" style="margin:0px;">
+              <p style="margin:0px;">{{ a.id }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
       <div ng-if="error" class="button button-block button-balanced error">{{error}}</div>
     </div>
   </form>

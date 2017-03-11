@@ -4,12 +4,10 @@ app.controller('SearchCtrl', function($scope, $state, $http, $templateCache) {
   $scope.Search = function(name) {
     console.log(name);
     if (name) {
-        link = 'http://localhost/lol/index.php';
+        link = 'http://localhost/mylol/php/index.php';
         $http.post(link, {data: name}).then(function(res) {
           console.log(res.data);
-          if (res.data === 'true') {
-            $scope.error = res.data;
-          }
+          $scope.infos = res.data;
         });
       } else {
       $scope.error = "";
