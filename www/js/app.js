@@ -22,6 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: './templates/search.html',
       controller: 'SearchCtrl'
+    })
+    .state('champs', {
+      url: '/champs',
+      templateUrl: './templates/champions.html',
+      controller: 'SearchCtrl'
     });
     // .state('signup', {
     //   url: '/signup',
