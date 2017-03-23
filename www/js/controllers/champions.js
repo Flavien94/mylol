@@ -3,7 +3,7 @@ app.controller('ChampsCtrl',function ($scope, $state, $http){
   $scope.queryBy = 'name';
   $http({
     method: 'GET',
-    url: 'http://localhost/mylol/php/test.php'
+    url: 'http://www.flavien-medina.fr/mylol/php/test.php'
   }).then(function (response) {
     console.log('ok');
     $scope.champions = response.data;

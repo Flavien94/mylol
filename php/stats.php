@@ -12,8 +12,7 @@ $api_cache = new riotapi('euw', new FileSystemCache('api/cache/'));
 $postdata = file_get_contents("php://input");
 if (isset($postdata)) {
   $request = json_decode($postdata);
-  // $api_username = str_replace(" ", "",strtolower($request->data));
-  $api_username = 'lowftwar';
+  $api_username = str_replace(" ", "",strtolower($request->data));
   $ranked_stats = end($api->getStats($api->getSummonerByName($api_username)[$api_username]['id'],'ranked')['champions'])['stats'];
   // ChromePhp::log($ranked_stats);
   // print_r ($ranked_stats);
