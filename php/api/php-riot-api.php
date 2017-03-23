@@ -32,7 +32,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 class riotapi {
 	const API_URL_1_1 = 'https://{region}.api.pvp.net/api/lol/{region}/v1.1/';
-	const API_URL_1_2 = 'https://{region}.api.pvp.net/api/lol/{region}/v1.2/';
+	const API_URL_1_2 = 'https://global.api.pvp.net/api/lol/static-data/{region}/v1.2/';
+	const API_URL_1_2_2 = 'https://{region}.api.pvp.net/api/lol/{region}/v1.2/';
 	const API_URL_1_3 = 'https://{region}.api.pvp.net/api/lol/{region}/v1.3/';
 	const API_URL_1_4 = 'https://{region}.api.pvp.net/api/lol/{region}/v1.4/';
 	const API_URL_2_1 = 'https://{region}.api.pvp.net/api/lol/{region}/v2.1/';
@@ -91,11 +92,19 @@ class riotapi {
 	}
 
 	//Returns all champion information.
-	public function getChampion(){
+	public function getChampionName(){
 		$call = 'champion';
 
 		//add API URL to the call
 		$call = self::API_URL_1_2 . $call;
+
+		return $this->request($call);
+	}
+	public function getChampion(){
+		$call = 'champion';
+
+		//add API URL to the call
+		$call = self::API_URL_1_2_2 . $call;
 
 		return $this->request($call);
 	}
@@ -104,7 +113,7 @@ class riotapi {
 	public function getFreeChampions()
 	{
 		$call  = 'champion?freeToPlay=true';
-		$call  = self::API_URL_1_2 . $call;
+		$call  = self::API_URL_1_2_2 . $call;
 
 		return $this->request($call, true);
 	}
