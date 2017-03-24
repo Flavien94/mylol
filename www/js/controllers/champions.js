@@ -11,7 +11,7 @@ app.controller('ChampsCtrl', function($scope, $state, $http) {
     console.log($scope.champions);
     if ($scope.champions != "") {
       setTimeout(function() {
-        $("#lod").addClass('hide');
+        $("#load_bg").addClass('hide');
         $(".load").buttonLoader('stop');
       }, 1000);
     }
