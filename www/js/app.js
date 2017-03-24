@@ -20,8 +20,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: './templates/search.html',
-      controller: 'SearchCtrl'
+      templateUrl: './templates/summoners.html',
+      controller: 'SummCtrl'
     })
     .state('champs', {
       url: '/champs',

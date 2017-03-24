@@ -1,5 +1,6 @@
 <?php
 include('init.php');
+include 'ChromePhp.php';
 include('api/php-riot-api.php');
 include('api/FileSystemCache.php');
 
@@ -10,7 +11,7 @@ $postdata = file_get_contents("php://input");
 if (isset($postdata)) {
   $request = json_decode($postdata);
   $api_username = str_replace(" ", "",strtolower($request->data));
-  // $api_username = 'lowftwar';
+  // $api_username = 'caaaaaaaaaaaaaaaaaaaaaaaa';
   $r = [
     "summonerId" => $api->getSummonerByName($api_username)[$api_username]['id'],
     "summonerName" => $api->getSummonerByName($api_username)[$api_username]['name'],

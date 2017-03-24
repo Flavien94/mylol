@@ -1,15 +1,22 @@
-app.controller('ChampsCtrl',function ($scope, $state, $http){
+app.controller('ChampsCtrl', function($scope, $state, $http) {
+  $('.load').buttonLoader('start');
   $scope.query = {};
   $scope.queryBy = 'name';
   $http({
     method: 'GET',
     url: 'http://flavien-medina.fr/mylol/php/champions.php'
-  }).then(function (response) {
+  }).then(function(response) {
     console.log('ok');
     $scope.champions = response.data;
     console.log($scope.champions);
-  }, function (response) {
-    console.log(response.data,response.status);
+    if ($scope.champions != "") {
+      setTimeout(function() {
+        $("#lod").addClass('hide');
+        $(".load").buttonLoader('stop');
+      }, 1000);
+    }
+  }, function(response) {
+    console.log(response.data, response.status);
   });
   // $http({
   //     method: 'GET',

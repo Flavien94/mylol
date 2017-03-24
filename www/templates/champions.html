@@ -1,19 +1,30 @@
 <ion-view view-title="Champions">
   <ion-content>
     <div class="phonecontainer">
+    <div id="lod" style="
+    background: white;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 5;
+    opacity: 0.6;
+    "></div>
+
       <div class="list">
         <label class="item item-input">
           <input type="text" id="query" ng-model="query[queryBy]"/>
     </label>
-        <label class="item item-input item-select">
-    <div class="input-label">
-      Filtre
-    </div>
-    <select ng-model="orderby">
-      <option value="name" selected>Name</option>
-      <option value="freeToPlay">Free</option>
-    </select>
-  </label>
+    <button style="
+    z-index:10;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50vw;
+    left: 34%;
+    margin: auto;
+    color: black;
+    font-size: 100px;"
+    class="load activated has-spinner" data-load-text=" "></button>
       </div>
       <ul>
         <li ng-repeat="c in champions | filter:query | orderBy:'name'">
@@ -26,7 +37,7 @@
           </div>
         </li>
       </ul>
-      <div ng-if="error" class="button button-block button-balanced error">{{error}}</div>
+      <div ng-if="error" class="button button-block button-assertive error">{{error}}</div>
     </div>
   </ion-content>
 </ion-view>
