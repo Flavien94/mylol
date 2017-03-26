@@ -1,5 +1,10 @@
 app.controller('ChampsCtrl', function($scope, $state, $http) {
   $('.load').buttonLoader('start');
+  $scope.select = 'name';
+  if ($scope.checked) {
+    console.log('aaa');
+    $scope.select = '-free';
+  }
   $scope.query = {};
   $scope.queryBy = 'name';
   $http({

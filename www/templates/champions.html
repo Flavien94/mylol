@@ -1,26 +1,37 @@
 <ion-view view-title="Champions">
   <ion-content>
     <div class="phonecontainer">
-    <div id="load_bg"></div>
-
-      <div class="list">
-        <label class="item item-input">
-          <input type="text" id="query" ng-model="query[queryBy]"/>
-    </label>
-    <button class="load activated has-spinner" data-load-text=" "></button>
+      <div id="load_bg"></div>
+      <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="text" id="query" placeholder="Rechercher" ng-model="query[queryBy]"/>
+      </label>
+        <label class="toggle toggle-positive">
+   <input type="checkbox" ng-model="checked">
+   <div class="track">
+     <div class="handle"></div>
+   </div>
+</label>
       </div>
-      <ul>
-        <li ng-repeat="c in champions | filter:query | orderBy:'name'">
-          <div class="card">
-            <div class="item item-avatar">
-              <img src="http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/{{c.key}}.png">
-              <h2>{{ c.name }}</h2>
-              <p ng-if="c.free === true">Gratuit</p>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="list">
+        <a class="item item-avatar" href="#" ng-repeat="c in champions | filter:query | orderBy:select" ng-if="!checked">
+          <img src="http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/{{c.key}}.png">
+          <h2>{{ c.name }}</h2>
+          <p class="free" ng-if="c.free === true">Gratuit</p>
+          <i class="icon ion-chevron-right"></i>
+          <!-- <li class="ion-chevron-right" data-pack="default" data-tags="arrow, right"></li> -->
+        </a>
+        <a class="item item-avatar" href="#" ng-repeat="c in champions | filter:query | orderBy:select" ng-if="checked && c.free === true">
+          <img src="http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/{{c.key}}.png">
+          <h2>{{ c.name }}</h2>
+          <p class="free" ng-if="c.free === true">Gratuit</p>
+          <i class="icon ion-chevron-right"></i>
+          <!-- <li class="ion-chevron-right" data-pack="default" data-tags="arrow, right"></li> -->
+        </a>
+      </div>
       <div ng-if="error" class="button button-block button-assertive error">{{error}}</div>
+      <button class="load activated has-spinner" data-load-text=" "></button>
     </div>
   </ion-content>
 </ion-view>

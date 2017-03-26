@@ -10,35 +10,35 @@
         <div class="padding" style="text-align:center">
           <button class="search button button-block button-positive activated has-spinner" data-load-text="Chargement" ng-click="Search(name)">Rechercher</button>
           <ul>
-            <li ng-repeat="i in infos">
-              <div class="card">
+            <li>
+              <div ng-if="load === true" class="card">
                 <div class="item item-avatar">
-                  <img src="https://avatar.leagueoflegends.com/euw/{{i.icon}}.png">
-                  <h2>{{ i.name }}</h2>
-                  <p>id : {{ i.id }}</p>
-                  <p>Niveau : {{ i.lvl }}</p>
+                  <img src="https://avatar.leagueoflegends.com/euw/{{infos.icon}}.png">
+                  <h2>{{ infos.name }}</h2>
+                  <p>id : {{ infos.id }}</p>
+                  <p>Niveau : {{ infos.lvl }}</p>
                 </div>
                 <div class="item item-body" style="margin:0px;">
-                  <div ng-repeat="s in stats">
+                  <div>
                     <div class="row">
                       <div class="col">Total Tués :</div>
-                      <div class="col">{{s.totalKill}}</div>
+                      <div class="col">{{stats.totalKill}}</div>
                     </div>
                     <div class="row">
                       <div class="col">Total Morts :</div>
-                      <div class="col">{{s.totalDeaths}}</div>
+                      <div class="col">{{stats.totalDeaths}}</div>
                     </div>
                     <div class="row">
                       <div class="col">Total Assist :</div>
-                      <div class="col">{{s.totalAssist}}</div>
+                      <div class="col">{{stats.totalAssist}}</div>
                     </div>
                     <div class="row">
                       <div class="col">Plus de Tués :</div>
-                      <div class="col">{{s.MostKill}}</div>
+                      <div class="col">{{stats.MostKill}}</div>
                     </div>
                     <div class="row">
                       <div class="col">Plus de Morts :</div>
-                      <div class="col">{{s.MostDeaths}}</div>
+                      <div class="col">{{stats.MostDeaths}}</div>
                     </div>
                   </div>
                 </div>

@@ -29,3 +29,34 @@
   z-index: 5;
   opacity: 0.6;
 }
+.freeChamp{
+  position: absolute;
+  z-index: 100;
+  top:80vh;
+}
+.freeChamp li{
+  list-style: none;
+  display: inline-block;
+  width: 10%;
+}
+.freeChamp a:hover{
+  transform: scale(2);
+}
+.freeChamp img{
+  width: 100%;
+}
+.bar .button-clear{
+  color:#b2b2b2;
+}
+.ion-chevron-right{
+  color: #373737;
+float: right;
+font-size: 25px;
+margin-top: -32px;
+}
+.bar.item-input-inset .item-input-wrapper{
+  margin-right: 10px;
+}
+.free{
+  display: inline;
+}
