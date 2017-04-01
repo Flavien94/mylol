@@ -15,6 +15,11 @@ app.config(function($ionicConfigProvider) {
   $ionicConfigProvider.backButton.text('');
 });
 app.controller('MainCtrl', function($scope, $state) {
+  setTimeout(function() {
+    $("#load-app").fadeOut(500, function() {
+      $("#load-app").toggleClass('hide');
+    });
+  }, 3000);
 });
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -28,16 +33,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: './templates/champions.html',
       controller: 'ChampsCtrl'
     });
-    // .state('signup', {
-    //   url: '/signup',
-    //   templateUrl: './templates/signup.html',
-    //   controller: 'LoginCtrl'
-    // })
-    // .state('post', {
-    //   url: '/post',
-    //   templateUrl: './templates/post.html',
-    //   controller: 'PostCtrl'
-    // });
 
   $urlRouterProvider.otherwise('/');
 });

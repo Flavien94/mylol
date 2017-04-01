@@ -1,8 +1,9 @@
 app.controller('SummCtrl', function($scope, $state, $http, $templateCache) {
   var link;
   $scope.Search = function(name) {
+    $(".card").removeClass('hide');
     if (name) {
-      $('.search').buttonLoader('start');
+      $('.summonerload').buttonLoader('start');
       console.log(name);
       $scope.error = "";
       $scope.dataS = "";
@@ -28,8 +29,10 @@ app.controller('SummCtrl', function($scope, $state, $http, $templateCache) {
             console.log(res.data[i]);
           }
           if ($scope.stats != "" && $scope.infos != "") {
-            $(".search").buttonLoader('stop');
-            $scope.load = true;
+            setTimeout(function() {
+              $("#summoner-load").addClass('hide');
+              $(".summonerload").buttonLoader('stop');
+            }, 1000);
           }
           if (!Array.isArray($scope.dataS) && !Array.isArray($scope.dataI)) {
             $scope.error = "Summoner introuvable";

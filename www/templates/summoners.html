@@ -1,53 +1,55 @@
 <ion-view view-title="Summoner">
   <ion-content>
     <div class="phonecontainer">
-      <form>
-        <div class="list">
+      <form ng-submit="Search(name)">
+        <div class="list list-inset">
           <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
             <input ng-model="name" type="text" name="name" placeholder="Summoner Name">
           </label>
         </div>
-        <div class="padding" style="text-align:center">
-          <button class="search button button-block button-positive activated has-spinner" data-load-text="Chargement" ng-click="Search(name)">Rechercher</button>
-          <ul>
-            <li>
-              <div ng-if="load === true" class="card">
-                <div class="item item-avatar">
-                  <img src="https://avatar.leagueoflegends.com/euw/{{infos.icon}}.png">
-                  <h2>{{ infos.name }}</h2>
-                  <p>id : {{ infos.id }}</p>
-                  <p>Niveau : {{ infos.lvl }}</p>
-                </div>
-                <div class="item item-body" style="margin:0px;">
-                  <div>
-                    <div class="row">
-                      <div class="col">Total Tués :</div>
-                      <div class="col">{{stats.totalKill}}</div>
-                    </div>
-                    <div class="row">
-                      <div class="col">Total Morts :</div>
-                      <div class="col">{{stats.totalDeaths}}</div>
-                    </div>
-                    <div class="row">
-                      <div class="col">Total Assist :</div>
-                      <div class="col">{{stats.totalAssist}}</div>
-                    </div>
-                    <div class="row">
-                      <div class="col">Plus de Tués :</div>
-                      <div class="col">{{stats.MostKill}}</div>
-                    </div>
-                    <div class="row">
-                      <div class="col">Plus de Morts :</div>
-                      <div class="col">{{stats.MostDeaths}}</div>
-                    </div>
+      </form>
+      <div class="padding" style="text-align:center">
+        <ul>
+          <li>
+            <div class="card hide">
+              <div id="summoner-load"></div>
+              <button class="summonerload activated has-spinner" data-load-text=" "></button>
+              <div class="item item-avatar">
+                <img src="https://avatar.leagueoflegends.com/euw/{{infos.icon}}.png">
+                <h2>{{ infos.name }}</h2>
+                <p>id : {{ infos.id }}</p>
+                <p>Niveau : {{ infos.lvl }}</p>
+              </div>
+              <div class="item item-body" style="margin:0px;">
+                <div>
+                  <div class="row">
+                    <div class="col">Total Tués :</div>
+                    <div class="col">{{stats.totalKill}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Total Morts :</div>
+                    <div class="col">{{stats.totalDeaths}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Total Assist :</div>
+                    <div class="col">{{stats.totalAssist}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Plus de Tués :</div>
+                    <div class="col">{{stats.MostKill}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Plus de Morts :</div>
+                    <div class="col">{{stats.MostDeaths}}</div>
                   </div>
                 </div>
               </div>
-            </li>
-          </ul>
-          <div ng-if="error" class="button button-block button-assertive error">{{error}}</div>
-        </div>
-      </form>
+            </div>
+          </li>
+        </ul>
+        <div ng-if="error" class="button button-block button-assertive error">{{error}}</div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

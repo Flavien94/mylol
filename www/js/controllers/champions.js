@@ -1,5 +1,5 @@
 app.controller('ChampsCtrl', function($scope, $state, $http) {
-  $('.load').buttonLoader('start');
+  $('.championsload').buttonLoader('start');
   $scope.select = 'name';
   if ($scope.checked) {
     console.log('aaa');
@@ -16,8 +16,8 @@ app.controller('ChampsCtrl', function($scope, $state, $http) {
     console.log($scope.champions);
     if ($scope.champions != "") {
       setTimeout(function() {
-        $("#load_bg").addClass('hide');
-        $(".load").buttonLoader('stop');
+        $("#champions-load").addClass('hide');
+        $(".championsload").buttonLoader('stop');
       }, 1000);
     }
   }, function(response) {
