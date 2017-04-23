@@ -36,3 +36,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 });
+app.listen(process.env.PORT || 5000)
