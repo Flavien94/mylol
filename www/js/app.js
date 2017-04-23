@@ -1,4 +1,7 @@
 var app = angular.module('starter', ['ionic', 'ui.router']);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -35,7 +38,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
     });
 
   $urlRouterProvider.otherwise('/');
-});
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
