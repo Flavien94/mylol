@@ -1,0 +1,116 @@
+.phonecontainer {
+    height: 100vh;
+    color: white;
+}
+.item-input{
+  border-color: #ddd !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+.list-inset{
+  margin: 20px 10px !important;
+  }
+.item{
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.hide{
+display: none;
+}
+.hide{
+display: none;
+}
+.card{
+  position: relative;
+}
+.championsload,.summonerload{
+  z-index: 10;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 110px;
+  margin: auto;
+  color: black;
+}
+.summonerload{
+left: 37%;
+font-size: 80px;
+}
+.championsload{
+  left: 34%;
+  font-size: 100px;
+}
+#champions-load{
+  background: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.6;
+}
+#summoner-load{
+  background: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.6;
+}
+.freeChamp{
+  position: absolute;
+  z-index: 100;
+  top:80vh;
+}
+.freeChamp li{
+  list-style: none;
+  display: inline-block;
+  width: 10%;
+}
+.freeChamp a:hover{
+  transform: scale(2);
+}
+.freeChamp img{
+  width: 100%;
+}
+.bar .button-clear{
+  color:#b2b2b2;
+}
+.ion-chevron-right{
+  color: #373737;
+float: right;
+font-size: 25px;
+margin-top: -12px;
+}
+.bar.item-input-inset .item-input-wrapper{
+  margin-right: 10px;
+}
+.free{
+  display: inline;
+}
+#load-app{
+  background: #020B14;
+  position: absolute;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+}
+#load-app>div{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+#load-app>div>img{
+  width: 100%;
+}
+#load-app>div>h3{
+  text-align: center;
+  color: white;
+}
